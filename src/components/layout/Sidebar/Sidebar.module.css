@@ -1,0 +1,147 @@
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-bg-surface);
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.logoArea {
+  height: var(--header-height);
+  box-sizing: border-box;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.logoImg {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.nav {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  overflow-y: auto;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  border-radius: var(--border-radius-md);
+  color: var(--color-text-secondary);
+  position: relative;
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  /* Smooth color + background transition using tokens */
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color            var(--duration-fast) var(--ease-out);
+}
+
+/* Left-edge indicator bar */
+.navItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 60%;
+  background: var(--color-primary);
+  border-radius: 0 2px 2px 0;
+  transition: transform var(--duration-base) var(--ease-out);
+  transform-origin: center;
+}
+
+.navItem:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.active {
+  background-color: var(--color-primary-light) !important;
+  color: var(--color-primary) !important;
+  font-weight: 600;
+}
+
+/* Show and grow the indicator on active */
+.active::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* ── Bottom section: Settings / Help / current-user profile ────────────── */
+.bottomSection {
+  padding: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-bg-base);
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.profileText {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profileRole {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+
+.helpModalText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}

@@ -1,0 +1,241 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.formSection {
+  flex: 55;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--color-bg-base);
+}
+
+.brandSection {
+  flex: 45;
+  display: block;
+}
+
+.mobileLogo {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.logoImg {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.globalErrorBanner {
+  background-color: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--color-status-danger);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  accent-color: var(--color-accent);
+  width: 14px;
+  height: 14px;
+}
+
+.forgotLink {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.dividerText {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ssoGroup {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ssoBtn {
+  flex: 1;
+  padding: 0.625rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+}
+
+.signupLink {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .brandSection {
+    display: none;
+  }
+  .formSection {
+    flex: 100;
+    padding: 1.5rem;
+  }
+  .mobileLogo {
+    display: flex;
+  }
+}
+
+.autofillGlow {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 8px rgba(245, 166, 35, 0.4) !important;
+  background-color: var(--color-accent-light) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.forgotModalText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}

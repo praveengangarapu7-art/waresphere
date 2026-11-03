@@ -1,0 +1,253 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.formSection {
+  flex: 55;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--color-bg-base);
+}
+
+.brandSection {
+  flex: 45;
+  display: block;
+}
+
+.mobileLogo {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.logoImg {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select {
+  height: 38px;
+  cursor: pointer;
+}
+
+.input:focus,
+.select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.strengthIndicator {
+  margin-top: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.strengthTracks {
+  height: 4px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.strengthBar {
+  height: 100%;
+  width: 33.33%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strengthWeak {
+  width: 33.33%;
+  background-color: var(--color-status-danger);
+}
+
+.strengthMedium {
+  width: 66.66%;
+  background-color: var(--color-accent);
+}
+
+.strengthStrong {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+.strengthText {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.agreeRow {
+  display: flex;
+  margin-top: 0.25rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.checkbox {
+  accent-color: var(--color-accent);
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+}
+
+.termsText a,
+.termsTextError a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.termsText a:hover,
+.termsTextError a:hover {
+  text-decoration: underline;
+}
+
+.termsTextError {
+  color: var(--color-status-danger);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.loginLink {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .brandSection {
+    display: none;
+  }
+  .formSection {
+    flex: 100;
+    padding: 1.5rem;
+  }
+  .mobileLogo {
+    display: flex;
+  }
+}
+
+.legalModalText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}

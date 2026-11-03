@@ -1,0 +1,146 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filterBar {
+  display: flex;
+  gap: 1.5rem;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius-sm);
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.select {
+  padding: 0.375rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.tableCard {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.facilityMeta {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+
+.ongoingText {
+  color: var(--color-status-danger);
+  font-weight: 700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.deviationVal {
+  color: var(--color-status-danger);
+  font-weight: 700;
+}
+
+.channelsList {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.channelBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+}
+
+.iconSms { color: #f5a623; }
+.iconEmail { color: #38bdf8; }
+.iconWa { color: #10b981; }
+.iconInapp { color: #6366f1; }
+
+/* Expanded timeline */
+.timelineExpandedCell {
+  background-color: var(--color-bg-surface);
+  padding: 1.25rem;
+}
+
+.timelineBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timelineBox h5 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stepRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+.stepDone {
+  color: var(--color-text-primary);
+}
+
+.stepPending {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.stepMinutes {
+  font-weight: 700;
+  width: 50px;
+}
+
+.stepMessage {
+  font-weight: 500;
+}

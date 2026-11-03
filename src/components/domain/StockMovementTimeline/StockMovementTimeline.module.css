@@ -1,0 +1,131 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+}
+
+.timelineIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+}
+
+.positive {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.negative {
+  color: var(--color-status-danger);
+  background-color: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.neutral {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border-color: rgba(30, 58, 95, 0.15);
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background-color: var(--color-border);
+  margin-top: 0.5rem;
+}
+
+.content {
+  flex: 1;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.875rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.typeText {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.timestamp {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+
+.detailsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.summaryText {
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+}
+
+.stockTransition {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.txtPos {
+  color: #10b981;
+}
+
+.txtNeg {
+  color: var(--color-status-danger);
+}
+
+.metaRow {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  border-top: 1px dashed var(--color-border);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.operator strong,
+.reason em {
+  color: var(--color-text-primary);
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}

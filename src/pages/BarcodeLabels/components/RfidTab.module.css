@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Preview-tier banner */
+.previewBanner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(135deg, #1E3A5F08, #1E3A5F14);
+  border: 1.5px dashed var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  padding: 1.1rem 1.4rem;
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.bannerIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bannerLeft strong {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+}
+
+.bannerLeft p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.previewChip {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  height: fit-content;
+}
+
+/* Stats row */
+.statsRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.statTile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+}
+
+.statIcon { color: var(--color-primary); }
+.statIconWarn { color: #D97706; }
+
+.statVal {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.statValWarn { color: #D97706; }
+
+.statLabel {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+/* Table */
+.tableCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.missingRow {
+  background: rgba(239, 68, 68, 0.03) !important;
+}
+
+.tagCode {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-bg-surface);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.skuCell {
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  max-width: 220px;
+}
+
+.warehouseCell {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.locationCell,
+.timeCell {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.locationCell svg,
+.timeCell svg {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}

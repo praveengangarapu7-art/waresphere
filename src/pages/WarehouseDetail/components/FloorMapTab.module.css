@@ -1,0 +1,245 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  width: 100%;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mapPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+  border-top: 1px dashed var(--color-border);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.colorBox {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+}
+
+.colorBox.ambient {
+  background-color: rgba(47, 123, 255, 0.08);
+  border-color: var(--color-primary);
+}
+
+.colorBox.cold {
+  background-color: rgba(34, 211, 238, 0.08);
+  border-color: var(--color-cyan);
+}
+
+.colorBox.hazmat {
+  background-color: rgba(245, 166, 35, 0.06);
+  border-color: var(--color-status-pending);
+}
+
+.detailsPanel {
+  min-height: 200px;
+}
+
+.detailsCard {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.75rem;
+}
+
+.zoneName {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.typeBadge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+.typeBadge.ambient {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.typeBadge.coldstorage {
+  background-color: var(--color-cyan-light);
+  color: var(--color-cyan);
+}
+
+.typeBadge.hazmat {
+  background-color: rgba(245, 166, 35, 0.1);
+  color: var(--color-status-pending);
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.label {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progressRow strong {
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+}
+
+.progressBar {
+  flex: 1;
+  height: 6px;
+  background-color: var(--color-bg-hover);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.sensorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(34, 211, 238, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+}
+
+.sensorIcon {
+  color: var(--color-cyan);
+}
+
+.sensorText {
+  display: flex;
+  flex-direction: column;
+}
+
+.sensorText strong {
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  margin-top: 0.125rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.statCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statIcon {
+  color: var(--color-text-secondary);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statInfo strong {
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  margin-top: 0.125rem;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-bg-base);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emptyIcon {
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.emptyState p {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}

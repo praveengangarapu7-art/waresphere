@@ -1,0 +1,796 @@
+/* ── Common ─────────────────────────────────────────────────────────────────── */
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stepTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  margin: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+}
+
+.idxCell {
+  width: 32px;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.skuCode {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background: var(--color-bg-surface);
+  color: var(--color-primary);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.binCode {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ── Step 1: Plan Details ────────────────────────────────────────────────────── */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+}
+
+@media (max-width: 600px) {
+  .summaryGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sumLabel {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.summaryValue {
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.blindIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.warnIcon   { color: var(--color-status-pending); }
+.successIcon { color: #059669; }
+
+.blindCallout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  color: #92400E;
+  line-height: 1.5;
+}
+
+.blindCallout svg {
+  flex-shrink: 0;
+  color: #D97706;
+  margin-top: 1px;
+}
+
+.fpiWarning {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 0.8125rem;
+  color: #991B1B;
+  line-height: 1.5;
+}
+
+.fpiWarning svg {
+  flex-shrink: 0;
+  color: #DC2626;
+  margin-top: 2px;
+}
+
+.fpiWarning strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.fpiWarning p {
+  margin: 0;
+}
+
+.hiddenQty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.qtyDisplay {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ── Step 2: Execution ──────────────────────────────────────────────────────── */
+.headerWithAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progressText {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* Blind count banner */
+.blindBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #1E3A5F08, #1E3A5F15);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  padding: 0.9rem 1.1rem;
+}
+
+.blindBannerIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.lockIcon {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.blindBanner strong {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.blindBanner p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+/* Progress bar */
+.progressBarContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progressBarTrack {
+  flex: 1;
+  height: 7px;
+  background: var(--color-bg-hover);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), #3B7AC8);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progressPct {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 32px;
+  text-align: right;
+}
+
+/* Hidden qty cells in execution */
+.hiddenQtyCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.hiddenHint {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Row done state */
+.rowDone {
+  background: rgba(5, 150, 105, 0.03) !important;
+}
+
+/* Scan button */
+.btnScan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--color-bg-base);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btnScan:hover {
+  background: var(--color-primary-light);
+}
+
+.scannedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.qtyInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.qtyInput {
+  width: 88px;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  border: 1.5px solid var(--color-border);
+  font-size: 0.8125rem;
+  font-family: var(--font-family);
+  font-weight: 600;
+  outline: none;
+  color: var(--color-text-primary);
+  transition: border-color 0.15s ease;
+}
+
+.qtyInput:focus {
+  border-color: var(--color-accent);
+}
+
+.qtyInputDone {
+  border-color: #059669;
+}
+
+.doneCheck {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+.scanFirst {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.successBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  color: #059669;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* ── Step 3: Variance Review ────────────────────────────────────────────────── */
+.thresholdInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem 0.85rem;
+}
+
+.thresholdTag {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.thresholdAnd {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+}
+
+@media (max-width: 768px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.statLabel {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.varianceCell {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.negIcon  { color: var(--color-status-danger); }
+.posIcon  { color: #059669; }
+
+.negValue   { color: var(--color-status-danger); font-weight: 700; }
+.posValue   { color: #059669; font-weight: 700; }
+.warnValue  { color: var(--color-status-pending); font-weight: 700; }
+.zeroValue  { color: var(--color-text-muted); }
+
+.successText  { color: #059669; font-weight: 700; }
+.warnText     { color: var(--color-status-pending); font-weight: 700; }
+.criticalText { color: var(--color-status-danger); font-weight: 700; }
+.alertText    { color: var(--color-status-pending); }
+
+.warningTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(245, 166, 35, 0.12);
+  color: var(--color-status-pending);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.criticalTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--color-status-danger);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.okTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.varianceTotalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ── Step 4: Approval ───────────────────────────────────────────────────────── */
+.varianceSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  gap: 1rem;
+}
+
+.summaryRow span:first-child {
+  color: var(--color-text-secondary);
+}
+
+.tierPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.tierAuto       { background: rgba(5, 150, 105, 0.1); color: #059669; }
+.tierSupervisor { background: rgba(245, 166, 35, 0.12); color: #B45309; }
+.tierManager    { background: rgba(239, 68, 68, 0.1); color: #DC2626; }
+
+.requiredRole {
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Tier legend */
+.tierLegend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tierLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.tierLegendActive {
+  opacity: 1;
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.tierLegendArrow {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.actionsBlock {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+}
+
+.approvalWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.authGranted {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  border-radius: var(--border-radius-sm);
+  padding: 0.6rem 0.875rem;
+}
+
+.btnRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btnApprove {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  font-family: var(--font-family);
+  transition: background 0.15s ease;
+}
+
+.btnApprove:hover {
+  background: var(--color-primary-hover);
+}
+
+.btnReject {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-status-danger);
+  border: 1px solid var(--color-status-danger);
+  font-family: var(--font-family);
+  transition: all 0.15s ease;
+}
+
+.btnReject:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.btnReject:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnNav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--color-bg-base);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family);
+  transition: all 0.15s ease;
+}
+
+.btnNav:hover {
+  background: var(--color-bg-hover);
+}
+
+.lockBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.8125rem;
+  color: #92400E;
+}
+
+.lockBox svg {
+  flex-shrink: 0;
+  color: #D97706;
+  margin-top: 2px;
+}
+
+.lockBox strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.lockBox p {
+  margin: 0 0 0.3rem;
+  line-height: 1.4;
+}
+
+.lockHint {
+  font-size: 0.75rem;
+  color: #92400E;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+/* Reject form */
+.rejectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.rejectFormHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #DC2626;
+}
+
+.rejectFormClose {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #DC2626;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.rejectFormDesc {
+  font-size: 0.8125rem;
+  color: #991B1B;
+  margin: 0;
+}
+
+.rejectReasonInput {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #FECACA;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-family: var(--font-family);
+  resize: vertical;
+  outline: none;
+  color: var(--color-text-primary);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.rejectReasonInput:focus {
+  border-color: #DC2626;
+}
+
+.successBadge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  color: #059669;
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.8125rem;
+}
+
+.successBadge svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.successBadge strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.successBadge p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.rejectionBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #DC2626;
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.8125rem;
+}
+
+.rejectionBox svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rejectionBox strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.rejectionBox p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,79 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8125rem;
+}
+
+.th {
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Row hover using motion tokens */
+.tbody :global(tr) {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+}
+
+.tbody :global(tr):last-child {
+  border-bottom: none;
+}
+
+.tbody :global(tr):hover {
+  background-color: var(--color-bg-hover);
+}
+
+.tbody :global(td) {
+  padding: 0.875rem 1rem;
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+/*
+  Row stagger animation.
+  We cap at 15 rows × 15ms = 225ms. Rows beyond that share the final delay.
+  Applied via nth-child on tbody tr so it fires when tbody re-renders.
+*/
+.tbody :global(tr) {
+  animation: ws-alert-in var(--duration-base) var(--ease-out) both;
+}
+
+/* Staggered delays, capped at 300ms total (row 20+) */
+.tbody :global(tr:nth-child(1))  { animation-delay:   0ms; }
+.tbody :global(tr:nth-child(2))  { animation-delay:  15ms; }
+.tbody :global(tr:nth-child(3))  { animation-delay:  30ms; }
+.tbody :global(tr:nth-child(4))  { animation-delay:  45ms; }
+.tbody :global(tr:nth-child(5))  { animation-delay:  60ms; }
+.tbody :global(tr:nth-child(6))  { animation-delay:  75ms; }
+.tbody :global(tr:nth-child(7))  { animation-delay:  90ms; }
+.tbody :global(tr:nth-child(8))  { animation-delay: 105ms; }
+.tbody :global(tr:nth-child(9))  { animation-delay: 120ms; }
+.tbody :global(tr:nth-child(10)) { animation-delay: 135ms; }
+.tbody :global(tr:nth-child(11)) { animation-delay: 150ms; }
+.tbody :global(tr:nth-child(12)) { animation-delay: 165ms; }
+.tbody :global(tr:nth-child(13)) { animation-delay: 180ms; }
+.tbody :global(tr:nth-child(14)) { animation-delay: 195ms; }
+.tbody :global(tr:nth-child(15)) { animation-delay: 210ms; }
+.tbody :global(tr:nth-child(16)) { animation-delay: 225ms; }
+.tbody :global(tr:nth-child(17)) { animation-delay: 240ms; }
+.tbody :global(tr:nth-child(18)) { animation-delay: 255ms; }
+.tbody :global(tr:nth-child(19)) { animation-delay: 270ms; }
+/* Rows 20+ all get the same cap delay */
+.tbody :global(tr:nth-child(n+20)) { animation-delay: 285ms; }

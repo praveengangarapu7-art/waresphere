@@ -1,0 +1,82 @@
+.card {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 180px;
+  flex: 1;
+  transition:
+    transform  var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.valueRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.value {
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.trendBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  /* One-time pulse-in on mount */
+  animation: ws-pulse-in 320ms var(--ease-out) both;
+}
+
+.trendUp {
+  background-color: rgba(47, 217, 138, 0.14);
+  color: var(--color-status-success);
+}
+
+.trendDown {
+  background-color: rgba(240, 84, 106, 0.14);
+  color: var(--color-status-danger);
+}
+
+.trendNeutral {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-secondary);
+}
+
+.footer {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: auto;
+}
+
+.targetLabel {
+  font-weight: 500;
+}
+
+.targetValue {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}

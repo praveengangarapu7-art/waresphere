@@ -1,0 +1,72 @@
+.card {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 180px;
+  transition:
+    transform    var(--duration-fast) var(--ease-out),
+    box-shadow   var(--duration-fast) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.iconWrapper {
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.description {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Warnings and dangers */
+.warning {
+  border-left: 4px solid var(--color-status-pending);
+}
+.warning .value {
+  color: var(--color-status-pending);
+}
+.warning .iconWrapper {
+  color: var(--color-status-pending);
+}
+
+.danger {
+  border-left: 4px solid var(--color-status-danger);
+}
+.danger .value {
+  color: var(--color-status-danger);
+}
+.danger .iconWrapper {
+  color: var(--color-status-danger);
+}

@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.chartWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+}
+
+.centerLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.centerValue {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.centerText {
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.125rem;
+}
+
+.legend {
+  flex: 1;
+  min-width: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.legendRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.375rem 0.5rem;
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.legendRow:disabled {
+  cursor: default;
+}
+
+.legendRow:not(:disabled):hover {
+  background-color: var(--color-bg-hover);
+}
+
+.legendDot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legendLabel {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.25;
+}
+
+.legendValue {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.legendPct {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  width: 2.5rem;
+  text-align: right;
+}

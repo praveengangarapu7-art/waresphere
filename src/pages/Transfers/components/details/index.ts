@@ -1,0 +1,6 @@
+export { default as TransferDetail } from './TransferDetail'
+export { default as BinMoveDetail } from './BinMoveDetail'
+export { default as AdjustmentDetail } from './AdjustmentDetail'
+export { default as ReturnDetail } from './ReturnDetail'
+export { default as KittingDetail } from './KittingDetail'
+export { default as MaterialIssueDetail } from './MaterialIssueDetail'

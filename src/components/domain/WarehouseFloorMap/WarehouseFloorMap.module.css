@@ -1,0 +1,82 @@
+.mapContainer {
+  width: 100%;
+  aspect-ratio: 160 / 100;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-bg-surface);
+}
+
+.svgMap {
+  display: block;
+}
+
+.zoneGroup {
+  cursor: pointer;
+}
+
+.zoneRect {
+  stroke-width: 0.75;
+  transition: all 0.2s ease;
+}
+
+.zoneGroup:hover .zoneRect {
+  stroke: var(--color-accent);
+  fill-opacity: 0.95;
+}
+
+/* Ambient Zone fills */
+.ambientFill {
+  fill: rgba(47, 123, 255, 0.08);
+}
+.ambientStroke {
+  stroke: var(--color-primary);
+}
+
+/* Cold Storage Zone fills */
+.coldFill {
+  fill: rgba(34, 211, 238, 0.08);
+}
+.coldStroke {
+  stroke: var(--color-cyan);
+}
+
+/* Hazmat Zone fills */
+.hazmatFill {
+  fill: rgba(245, 166, 35, 0.06);
+}
+.hazmatStroke {
+  stroke: var(--color-status-pending);
+}
+
+/* Selected state highlight overlay styles */
+.zoneRect.selected {
+  stroke: var(--color-accent);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+}
+
+.stripeOverlay {
+  pointer-events: none;
+}
+
+/* Text styles inside the SVG shapes */
+.labelTitle {
+  font-size: 4px;
+  font-weight: 800;
+  fill: var(--color-primary);
+  letter-spacing: 0.25px;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.selectedText {
+  fill: var(--color-text-primary);
+}
+
+.labelStats {
+  font-size: 3.5px;
+  font-weight: 600;
+  fill: var(--color-text-secondary);
+  pointer-events: none;
+}

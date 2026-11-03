@@ -1,0 +1,97 @@
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.banner:hover {
+  transform: translateX(4px);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-bg-surface);
+}
+
+.iconCold {
+  color: var(--color-primary);
+}
+
+.iconStock {
+  color: var(--color-accent);
+}
+
+.iconTransfer {
+  color: var(--color-cyan);
+}
+
+.iconCount {
+  color: var(--color-accent);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.timestamp {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.125rem;
+}
+
+.badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+.critical {
+  border-left: 4px solid var(--color-status-danger);
+}
+.banner.critical {
+  background-color: rgba(240, 84, 106, 0.05);
+}
+.badge.critical {
+  background-color: rgba(240, 84, 106, 0.14);
+  color: var(--color-status-danger);
+}
+
+.warning {
+  border-left: 4px solid var(--color-status-pending);
+}
+.banner.warning {
+  background-color: rgba(245, 166, 35, 0.05);
+}
+.badge.warning {
+  background-color: rgba(245, 166, 35, 0.1);
+  color: var(--color-status-pending);
+}
+
+.info {
+  border-left: 4px solid var(--color-primary);
+}
+.badge.info {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}

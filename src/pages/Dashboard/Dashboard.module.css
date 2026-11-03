@@ -1,0 +1,453 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.loadingState {
+  padding: 4rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heroEyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  margin-bottom: 0.5rem;
+}
+
+.heroTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.015em;
+  max-width: 640px;
+  line-height: 1.25;
+}
+
+.heroSubtitle {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.aiStatus {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+}
+
+.aiStatusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-status-success);
+  animation: ws-live-pulse 2s var(--ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aiStatusDot {
+    animation: none;
+  }
+}
+
+.aiStatusLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.aiStatusValue {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-status-success);
+}
+
+.scopeSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scopeLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+}
+
+.select {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+}
+
+.scopeHelper {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.heroKpiRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Insights ─────────────────────────────────────────────────────────── */
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ── KPI row (existing operational metrics) ──────────────────────────── */
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.coldStorageStrip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.coldGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.coldCard {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.coldCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coldZoneName {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusDot.normal {
+  background-color: var(--color-status-success);
+}
+
+.statusDot.warning {
+  background-color: var(--color-status-pending);
+}
+
+.statusDot.critical {
+  background-color: var(--color-status-danger);
+}
+
+.coldMetrics {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.metricLabel {
+  color: var(--color-text-secondary);
+  display: block;
+  font-size: 0.6875rem;
+}
+
+.metricVal {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.panelsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .panelsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.alertsPanel,
+.breakdownPanel,
+.activityPanel {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panelHeaderTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.panelHeaderTitle h3 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+}
+
+.alertIcon {
+  color: var(--color-status-danger);
+}
+
+.analyticsIcon {
+  color: var(--color-primary);
+}
+
+.viewAll {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.alertsFeed {
+  max-height: 290px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.timestampCell {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+
+.progressCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progressBar {
+  width: 60px;
+  height: 6px;
+  background-color: var(--color-bg-hover);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+.tableAlertBadge {
+  background-color: rgba(240, 84, 106, 0.14);
+  color: var(--color-status-danger);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.tableSuccessBadge {
+  color: var(--color-status-success);
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.itStatusCard {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.itHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.itIcon {
+  color: var(--color-primary);
+}
+
+.financeIcon {
+  color: var(--color-accent);
+}
+
+.itHeader h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+}
+
+.itGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.itMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.itLabel {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.itBadge {
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+}
+
+.itBadge.good {
+  background-color: rgba(47, 217, 138, 0.14);
+  color: var(--color-status-success);
+}
+
+.itBadge.warning {
+  background-color: var(--color-accent-light);
+  color: var(--color-status-pending);
+}
+
+.itValue {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Staff Layout styles */
+.staffGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.priorityBadge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+}
+
+.priorityBadge.high {
+  background-color: rgba(240, 84, 106, 0.14);
+  color: var(--color-status-danger);
+}
+
+.priorityBadge.medium {
+  background-color: var(--color-accent-light);
+  color: var(--color-status-pending);
+}
+
+.priorityBadge.low {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-secondary);
+}
+
+.statusBadge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.statusBadge.pending {
+  color: var(--color-status-pending);
+}
+
+.statusBadge.inprogress {
+  color: var(--color-primary);
+}
+
+.statusBadge.scheduled {
+  color: var(--color-text-secondary);
+}

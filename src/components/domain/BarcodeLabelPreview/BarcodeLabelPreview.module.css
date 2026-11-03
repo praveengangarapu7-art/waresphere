@@ -1,0 +1,78 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+  background: #fff;
+  border: 1.5px solid #D0D7E3;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Inter', monospace, sans-serif;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E5EAF0;
+  padding-bottom: 3px;
+  margin-bottom: 2px;
+}
+
+.logoImg {
+  height: 14px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.barcodeRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.barcodeSvg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fieldsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 8px;
+  border-top: 1px solid #E5EAF0;
+  padding-top: 3px;
+}
+
+.field {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  min-width: 0;
+}
+
+.fieldWide {
+  width: 100%;
+}
+
+.fieldLabel {
+  font-size: 6.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #6B7A8D;
+  flex-shrink: 0;
+}
+
+.fieldValue {
+  font-size: 7.5px;
+  font-weight: 600;
+  color: #1A1F26;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+.caption {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-secondary);
+  font-size: 0.725rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.chip:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+  background-color: var(--color-accent-light);
+}
+
+.chip:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.chip:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.roleName {
+  white-space: normal;
+  text-align: left;
+  line-height: 1.2;
+}

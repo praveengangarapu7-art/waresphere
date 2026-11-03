@@ -1,0 +1,82 @@
+:root {
+  /* ── Background system — deep navy / near-black ─────────────────────────
+     surface = page background (darkest); base = card/panel surface (sits
+     visually "above" the page, same relationship as the old light theme's
+     base-lighter-than-surface, just inverted onto a dark scale); elevated =
+     modals/dropdowns/popovers (highest surface). */
+  --color-bg-surface: #050B14;
+  --color-bg-base: #0A1424;
+  --color-bg-elevated: #101D33;
+  --color-bg-hover: rgba(255, 255, 255, 0.05);
+  --color-bg-active: rgba(255, 255, 255, 0.08);
+
+  /* ── Brand / AI accent system — electric blue + cyan ────────────────────
+     Hover is deliberately LIGHTER than base (not darker, as in the old
+     light theme) — on dark surfaces, interactive elements brighten on
+     hover rather than deepen. */
+  --color-primary: #2F7BFF;
+  --color-primary-hover: #5B95FF;
+  --color-primary-light: rgba(47, 123, 255, 0.14);
+  --color-cyan: #22D3EE;
+  --color-cyan-light: rgba(34, 211, 238, 0.14);
+
+  /* Amber retained as a secondary "pending/attention" semantic accent only —
+     no longer the brand accent (that's now blue/cyan per the design brief). */
+  --color-accent: #F5A623;
+  --color-accent-hover: #FFC155;
+  --color-accent-light: rgba(245, 166, 35, 0.14);
+
+  --color-text-primary: #EDF2FA;
+  --color-text-secondary: #8FA0B8;
+  --color-text-muted: #5A6B82;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.16);
+  --color-border-strong: rgba(255, 255, 255, 0.24);
+
+  /* Status colors — tuned lighter/more saturated than a light-UI equivalent
+     so they stay legible against near-black surfaces. */
+  --color-status-draft: #71839A;
+  --color-status-pending: #F5A623;
+  --color-status-active: #2F7BFF;
+  --color-status-danger: #F0546A;
+  --color-status-warning: #F5A623;
+  --color-status-success: #2FD98A;
+  --color-status-info: #22D3EE;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --letter-spacing-label: 0.06em;
+
+  /* Layout Metrics */
+  --sidebar-width: 264px;
+  --header-height: 64px;
+  --topbar-height: var(--header-height);
+
+  /* Radii — deliberately small/restrained, not the "huge rounded card"
+     look; xl added for hero-level surfaces only. */
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 10px;
+  --border-radius-xl: 14px;
+
+  /* Shadows — retuned for dark surfaces: depth cues rather than the
+     "lifting off white paper" shadows the light theme used. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
+
+  /* AI glow — reserved for genuinely important AI-surfaced elements
+     (Copilot, key insight cards, AI status indicator). Never decorative,
+     never applied broadly. */
+  --glow-primary: 0 0 0 1px rgba(47, 123, 255, 0.35), 0 0 32px rgba(47, 123, 255, 0.16);
+  --glow-cyan: 0 0 0 1px rgba(34, 211, 238, 0.3), 0 0 28px rgba(34, 211, 238, 0.14);
+
+  /* Motion tokens — use these everywhere instead of ad-hoc values */
+  --duration-fast:   120ms;
+  --duration-base:   200ms;
+  --duration-slow:   320ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

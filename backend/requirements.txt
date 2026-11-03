@@ -1,0 +1,22 @@
+fastapi>=0.110.0,<1.0.0
+uvicorn[standard]>=0.29.0,<1.0.0
+sqlalchemy>=2.0.29,<3.0.0
+psycopg2-binary>=2.9.9,<3.0.0
+pydantic>=2.6.0,<3.0.0
+pydantic-settings>=2.2.0,<3.0.0
+python-dotenv>=1.0.1,<2.0.0
+
+# Phase 0 additions
+pwdlib[argon2]>=0.2.0,<1.0.0
+python-jose[cryptography]>=3.3.0,<4.0.0
+email-validator>=2.1.0,<3.0.0
+alembic>=1.13.0,<2.0.0
+slowapi>=0.1.9,<1.0.0
+
+# Test tooling (not in the original Phase 0 list, but required to implement
+# and run the tests item 4/5 ask for — no test runner existed previously)
+pytest>=8.0.0,<9.0.0
+
+# Phase 2A addition: required by starlette's TestClient for the first
+# API-level (HTTP request/response) tests in this project.
+httpx>=0.27.0,<1.0.0

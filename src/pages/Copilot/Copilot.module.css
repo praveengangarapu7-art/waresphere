@@ -1,0 +1,301 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.625rem;
+}
+
+.iconBadge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  box-shadow: var(--glow-primary);
+  margin-bottom: 0.5rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.heroTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.contextLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.contextDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-status-success);
+  animation: ws-live-pulse 2s var(--ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contextDot {
+    animation: none;
+  }
+}
+
+/* ── Ask bar ──────────────────────────────────────────────────────────── */
+.askBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  box-shadow: var(--shadow-md);
+  transition: border-color var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+}
+
+.askBar:focus-within {
+  border-color: rgba(47, 123, 255, 0.4);
+  box-shadow: var(--glow-primary);
+}
+
+.askIcon {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.input {
+  flex: 1;
+  padding: 0.75rem 0;
+  border: none;
+  font-size: 0.9375rem;
+  font-family: var(--font-family);
+  outline: none;
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.askButton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.askButton:hover {
+  background: var(--color-primary-hover);
+}
+
+/* ── Suggestions ──────────────────────────────────────────────────────── */
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.suggestionChip {
+  padding: 0.45rem 0.9rem;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-family: var(--font-family);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color      var(--duration-fast) var(--ease-out),
+    color             var(--duration-fast) var(--ease-out);
+}
+
+.suggestionChip:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+/* ── Idle state: the data → reasoning → answer pipeline ──────────────── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 2rem;
+}
+
+.pipelineStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.pipelineStep span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.pipelineIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.pipelineConnector {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-border), var(--color-border-hover), var(--color-border));
+  margin-bottom: 1.5rem;
+}
+
+/* ── Conversation exchange ────────────────────────────────────────────── */
+.exchange {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  animation: ws-fade-in var(--duration-base) var(--ease-out) both;
+}
+
+.questionRow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: flex-end;
+}
+
+.questionIcon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-secondary);
+}
+
+.questionText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 0.625rem 1rem;
+}
+
+.responseCard {
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: ws-modal-in var(--duration-base) var(--ease-out) both;
+}
+
+.responseSuccess {
+  border-left-color: var(--color-primary);
+  box-shadow: var(--glow-primary);
+}
+
+.responseMuted {
+  border-left-color: var(--color-status-pending);
+}
+
+.responseHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.responseIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.responseLabel {
+  flex: 1;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.responseMessage {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  margin: 0;
+}

@@ -1,0 +1,216 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.controlsBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.periodSelector {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.periodBtn {
+  background-color: var(--color-bg-base);
+  border: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.periodBtn.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btnReport {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+
+.btnReport:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardHeader h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.iconAward { color: var(--color-primary); }
+.iconZap { color: #f5a623; }
+
+.chartWrapper {
+  width: 100%;
+  height: 200px;
+}
+
+.summaryTableBox {
+  margin-top: 0.5rem;
+}
+
+.warnText {
+  color: var(--color-status-danger);
+}
+
+.successText {
+  color: #10b981;
+}
+
+.energyTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.energyTotal span {
+  color: var(--color-text-secondary);
+}
+
+.energyTotal strong {
+  color: var(--color-primary);
+}
+
+/* Compliance Report styles */
+.reportContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reportHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.checkIcon {
+  color: #10b981;
+}
+
+.reportHeader h3 {
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.reportHeader p {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.125rem;
+}
+
+.reportMain {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.repRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+}
+
+.repRow span {
+  color: var(--color-text-secondary);
+}
+
+.repRow strong {
+  color: var(--color-primary);
+}
+
+.reportFooter {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.reportFooter p {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+
+.btnPrimaryClose {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: center;
+}
+
+.btnPrimaryClose:hover {
+  background-color: var(--color-primary-hover);
+}

@@ -1,0 +1,114 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   WareSphere Motion System
+   All animation tokens and shared keyframes live here.
+   Import is handled via global.css.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Durations */
+  --duration-fast:   120ms;
+  --duration-base:   200ms;
+  --duration-slow:   320ms;
+
+  /* Easings — "precise, systematic, enterprise" personality */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ─── Shared keyframes ────────────────────────────────────────────────────── */
+
+/* Overlay/backdrop */
+@keyframes ws-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal scale-fade */
+@keyframes ws-modal-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Drawer slide from right */
+@keyframes ws-drawer-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* Dropdown scale-fade from anchor */
+@keyframes ws-dropdown-in {
+  from { opacity: 0; transform: scale(0.96) translateY(-6px); }
+  to   { opacity: 1; transform: scale(1)   translateY(0); }
+}
+
+/* Alert / toast slide-in from top */
+@keyframes ws-alert-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast slide-in from bottom-right */
+@keyframes ws-toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* Toast exit */
+@keyframes ws-toast-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(8px); }
+}
+
+/* Page fade */
+@keyframes ws-page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle pulse for trend badges */
+@keyframes ws-pulse-in {
+  0%   { transform: scale(0.85); opacity: 0; }
+  60%  { transform: scale(1.06); }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+/* Brand panel ambient dot pulse */
+@keyframes ws-dot-pulse {
+  0%, 100% { opacity: 0.6; r: 4px; }
+  50%       { opacity: 1.0; r: 6px; }
+}
+
+/* Continuous "live" status pulse — for an AI-system-operational indicator
+   dot. Distinct from ws-pulse-in (a one-time entrance): this loops for as
+   long as the element is mounted. Reserve for genuinely live/real-time
+   status, not decoration. */
+@keyframes ws-live-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(47, 217, 138, 0.5); }
+  70%  { box-shadow: 0 0 0 6px rgba(47, 217, 138, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 217, 138, 0); }
+}
+
+/* Step cross-fade out */
+@keyframes ws-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Step cross-fade in */
+@keyframes ws-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Reduced-motion override ─────────────────────────────────────────────── */
+/* Users who prefer reduced motion get instant state changes */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

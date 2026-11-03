@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Tab bar */
+.tabBar {
+  display: flex;
+  gap: 0.125rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tabBtn:hover {
+  color: var(--color-primary);
+}
+
+.tabActive {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Panel wrapper */
+.panel {
+  min-height: 400px;
+}

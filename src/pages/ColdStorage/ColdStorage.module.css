@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loadingState {
+  padding: 4rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.headerScope {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scopeLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.scopeSelect {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.scopeSelect:focus {
+  border-color: var(--color-accent);
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tabContent {
+  margin-top: 0.5rem;
+}
+
+.liveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .liveGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .liveGrid {
+    grid-template-columns: 1fr;
+  }
+}
